@@ -1,2 +1,3 @@
 # vimrc
-vimrc保存用．
+vimrc保存用．  
+使うときはgit cloneなりコピペなり．
