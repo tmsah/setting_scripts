@@ -1,25 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'leafgarland/typescript-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" カラースキームの設定
-colorscheme antares
-
-
 " 画面表示の設定
 set number         " 行番号を表示する
 set cursorline     " カーソル行にアンダーライン
@@ -101,67 +82,3 @@ nmap sw <C-w>w
 nmap sx <C-w>x " 現在の画面の位置を一つ前の画面と入れ替え
 nmap :w<Return> gg=G <Return> :w <Return>
 nmap :we<Return> :w <Return>
-
-
-" vimプラグイン設定
-if has('vim_starting')
-  " 初回起動時のみruntimepathにNeoBundleのパスを指定する
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  " NeoBundleが未インストールであればgit cloneする・・・・・・①
-  if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-    echo "install NeoBundle..."
-    :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-  endif
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" インストールするVimプラグインを以下に記述
-" NeoBundle自身を管理
-NeoBundleFetch 'Shougo/neobundle.vim'
-"----------------------------------------------------------
-" ここに追加したいVimプラグインを記述する
-
-" インデントの可視化
-NeoBundle 'Yggdroot/indentLine'
-
-if has('lua') " lua機能が有効になっている場合
-  " コードの自動補完
-  NeoBundle 'Shougo/neocomplete.vim'
-  " スニペットの補完機能
-  NeoBundle "Shougo/neosnippet"
-  " スニペット集
-  NeoBundle 'Shougo/neosnippet-snippets'
-endif
-
-"----------------------------------------------------------
-" neocomplete・neosnippetの設定
-"----------------------------------------------------------
-if neobundle#is_installed('neocomplete.vim')
-  " Vim起動時にneocompleteを有効にする
-  let g:neocomplete#enable_at_startup = 1
-  " smartcase有効化. 大文字が入力されるまで大文字小文字の区別を無視する
-  let g:neocomplete#enable_smart_case = 1
-  " 3文字以上の単語に対して補完を有効にする
-  let g:neocomplete#min_keyword_length = 3
-  " 区切り文字まで補完する
-  let g:neocomplete#enable_auto_delimiter = 1
-  " 1文字目の入力から補完のポップアップを表示
-  let g:neocomplete#auto_completion_start_length = 1
-  " バックスペースで補完のポップアップを閉じる
-  inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-
-  " エンターキーで補完候補の確定. スニペットの展開もエンターキーで確定
-  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-  " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
-  imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
-endif
-
-"----------------------------------------------------------
-call neobundle#end()
-
-" ファイルタイプ別のVimプラグイン/インデントを有効にする
-filetype plugin indent on
-
-" 未インストールのVimプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-NeoBundleCheck
