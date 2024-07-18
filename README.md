@@ -4,16 +4,12 @@
 
 ## oh-my-zsh(`.zshrcとセットで使う`)
 `oh-my-zsh`は[ここ](https://qiita.com/iwaseasahi/items/a2b00b65ebd06785b443)を参考にインストール。  
-テーマは`af-magic`、`ls`コマンドのカラーは`LSCOLORS=GxfxcxdxbxegedabagGxGx`。  
-ターミナルの表示はこうなっている。  
+インストールが完了したら `~/.oh-my-zsh/custom` にこのリポジトリの `.oh-my-zsh/custom/main.zsh-theme` を配置して、 `~/.zshrc` にテーマ設定を記述する。
 ```
-# primary prompt
-PS1='
-$FG[237]${(l.$(afmagic_dashes)..-.)}%{$reset_color%}
-$FG[032][%*]%~$(git_prompt_info)$(hg_prompt_info) $FG[105]%(!.#.»)%{$reset_color%} '
-PS2='%{$fg[red]%}\ %{$reset_color%}'
-RPS1='${return_code}'
+ZSH_THEME="main"
 ```
+(というかこのリポジトリの `.zshrc` を `~/.zshrc` へコピペで良い。)
+
 ターミナル起動のたびに`Insecure completion-dependent directories detected:`の警告が出る場合は以下を実行。
 ```
 compaudit | xargs chmod g-w,o-w
