@@ -1,10 +1,9 @@
-# af-magic.zsh-theme
+# main.zsh-theme
+# from: af-magic.zsh-theme
 #
-# Author: Andy Fleming
-# URL: http://andyfleming.com/
 
 # dashed separator size
-function afmagic_dashes {
+function main_dashes {
   # check either virtualenv or condaenv variables
   local python_env="${VIRTUAL_ENV:-$CONDA_DEFAULT_ENV}"
 
@@ -16,11 +15,13 @@ function afmagic_dashes {
     echo $COLUMNS
   fi
 }
-
-# primary prompt: dashed separator, directory and vcs info
-PS1="${FG[237]}\${(l.\$(afmagic_dashes)..-.)}%{$reset_color%}
-${FG[032]}%~\$(git_prompt_info)\$(hg_prompt_info) ${FG[105]}%(!.#.»)%{$reset_color%} "
-PS2="%{$fg[red]%}\ %{$reset_color%}"
+# primary prompt
+PS1='
+$FG[237]${(l.$(main_dashes)..-.)}%{$reset_color%}
+$FG[032][%*]%~$(git_prompt_info)$(hg_prompt_info) $FG[105]%(!.#.»)%{$reset_color%} '
+PS2='%{$fg[red]%}\ %{$reset_color%}'
+RPS1='${return_code}
+'
 
 # right prompt: return code, virtualenv and context (user@host)
 RPS1="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
