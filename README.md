@@ -6,6 +6,16 @@
 ### インストール
 [ここ](https://qiita.com/iwaseasahi/items/a2b00b65ebd06785b443)を参考にインストール。
 
+### LaunchAgentsの設定
+macでログイン時に自動でコマンドを実行する仕組み。  
+`~/Library/LaunchAgents` 以下に `Library/LaunchAgents` 以下の `plist` ファイルを配置。  
+その後コマンド実行。  
+```
+$ launchctrl load hoge.plist
+```
+これで次回ログイン時から `plist` に記述したコマンドが自動実行される。  
+(自動実行をやめる時は `unload` してファイルを削除。)
+
 ### `.zshrc` の設定
 `~/.zshrc` にこのリポジトリの `.zshrc` を上書きする。
 
