@@ -2,4 +2,8 @@
     "editor.codeLens": false,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#00ff00",
+        "editor.lineHighlightBackground": "#333333"
+    },
 }
