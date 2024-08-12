@@ -38,3 +38,9 @@ compaudit | xargs chmod g-w,o-w
 
 ## iTerm2の設定
 上から降りて来るのは[これ](https://qiita.com/okamu_/items/a5086d2d5ba405f35acb)を参照。
+
+## VSCodeの設定ファイル
+配置場所
+- Windows: `C:\Users\(ユーザー名)\AppData\Roaming\Code\User`
+- Mac: `$HOME/Library/Application Support/Code/User`
+- Linux: `$HOME/.config/Code/User`
