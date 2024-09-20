@@ -1,5 +1,6 @@
 {
     "editor.codeLens": false,
+    "editor.copyWithSyntaxHighlighting": false,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "workbench.colorCustomizations": {
