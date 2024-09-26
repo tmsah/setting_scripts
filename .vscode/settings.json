@@ -1,10 +1,11 @@
 {
-    "editor.codeLens": false,
-    "editor.copyWithSyntaxHighlighting": false,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#333333",
-        "editorCursor.foreground": "#00ff00",
-    },
+  "editor.codeLens": false,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.guides.bracketPairs": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#333333",
+    "editorCursor.foreground": "#00ff00",
+  },
 }
