@@ -145,3 +145,6 @@ setopt hist_reduce_blanks
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pyenv仮想環境名をプロンプトに表示しない
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
