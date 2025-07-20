@@ -1,103 +1,99 @@
-# If you come from bash you might have to change your $PATH.
+# bashから移行する場合は$PATHを変更する必要があるかもしれません
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# oh-my-zshのインストールパス
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# 読み込むテーマ名を設定 --- "random"に設定すると、
+# oh-my-zshが読み込まれるたびにランダムなテーマが読み込まれます
+# どのテーマが読み込まれたかを知るには: echo $RANDOM_THEME
+# テーマについては https://github.com/ohmyzsh/ohmyzsh/wiki/Themes を参照
 ZSH_THEME="main"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
+# ランダム読み込み時に選択するテーマのリストを設定
+# ZSH_THEME=randomの時にこの変数を設定すると、zshは
+# ~/.oh-my-zsh/themes/を見る代わりにこの変数からテーマを読み込みます
+# 空の配列に設定した場合、この変数は効果がありません
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
+# 大文字小文字を区別する補完を使用する
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
+# ハイフンを区別しない補完を使用する
+# CASE_SENSITIVEはオフにする必要があります。_と-が交換可能になります
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
+# 隔週の自動更新チェックを無効化
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to automatically update without prompting.
-
+# プロンプトなしで自動更新する
 # DISABLE_UPDATE_PROMPT="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
+# 自動更新の頻度を変更する
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line if pasting URLs and other text is messed up.
+# URLやその他のテキストをよしなに貼り付ける機能を無効化
 # DISABLE_MAGIC_FUNCTIONS=true
 
-# Uncomment the following line to disable colors in ls.
+# lsでの色表示を無効化
 #DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
+# ターミナルタイトルの自動設定を無効化
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
+# コマンドの自動修正を有効化
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
+# 補完待機中に赤いドットを表示する
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# VCS配下の追跡されていないファイルをdirtyとしてマークするのを無効化
+# これにより大きなリポジトリでのリポジトリステータスチェックが大幅に高速化される
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
+# historyコマンド出力に表示される実行時刻のタイムスタンプを変更
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
+# またはstrftime関数の形式指定を使用してカスタム形式を設定する
+# 詳細は 'man strftime' を参照してください
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
+# $ZSH/custom以外のカスタムフォルダを使用
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# どのプラグインを読み込みますか？
+# 標準プラグインは ~/.oh-my-zsh/plugins/* にあります
+# カスタムプラグインは ~/.oh-my-zsh/custom/plugins/ に追加
+# 例の形式: plugins=(rails git textmate ruby lighthouse)
+# プラグインが多すぎるとシェルの起動が遅くなるので、賢く追加してください
 plugins=(git zsh-syntax-highlighting zsh-completions)
 autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
 export LSCOLORS=GxfxcxdxbxegedabagGxGx
 
-# User configuration
+# ユーザー設定
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
+# 言語環境を手動で設定
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
+# ローカルおよびリモートセッション用の優先エディタ
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
+# コンパイルフラグ
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# oh-my-zshのライブラリ、プラグイン、テーマで提供されるものを上書きする
+# 個人的なエイリアスを設定します。エイリアスはここに配置できますが、
+# oh-my-zshユーザーはZSH_CUSTOMフォルダ内でエイリアスを定義することが推奨されます。
+# アクティブなエイリアスを表示するには、`alias`を実行してください。
 #
-# Example aliases
+# エイリアスの例
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls'
@@ -146,5 +142,5 @@ setopt hist_reduce_blanks
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# pyenv仮想環境名をプロンプトに表示しない
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# 追加の設定ファイルを実行
+. "$HOME/.local/bin/env"
