@@ -2,6 +2,8 @@
   "editor.codeLens": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.guides.bracketPairs": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "workbench.colorCustomizations": {
