@@ -1,6 +1,9 @@
 # bashから移行する場合は$PATHを変更する必要があるかもしれません
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Nodebrew経由のnpm
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # oh-my-zshのインストールパス
 export ZSH=$HOME/.oh-my-zsh
 
@@ -97,6 +100,7 @@ export LSCOLORS=GxfxcxdxbxegedabagGxGx
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls'
+alias tf='terraform'
 # 文字コードの指定
 export LANG=ja_JP.UTF-8
 
