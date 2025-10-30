@@ -101,6 +101,12 @@ export LSCOLORS=GxfxcxdxbxegedabagGxGx
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias l='ls'
 alias tf='terraform'
+
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dp='docker ps'
+alias dim='docker images'
+
 # 文字コードの指定
 export LANG=ja_JP.UTF-8
 
